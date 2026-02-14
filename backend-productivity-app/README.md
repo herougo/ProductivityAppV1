@@ -3,8 +3,15 @@
 ## Installation (Windows with cmd)
 
 1) Download and install python 3.14 ( https://www.python.org/downloads/ )
-2) cd into `backend-productivity-app`.
+2) `cd backend-productivity-app`.
 3) Create a virtual environment (`python -m venv env`)
 4) Run `env\Scripts\activate` to activate the virtual environment
-5) Run pip install -r requirements.txt
+5) Run `pip install -r requirements.txt`
 6) Run `env\Scripts\deactivate` to deactivate the virtual environment
+
+## Running a Development Server
+
+1) `cd backend-productivity-app`
+2) `env\Scripts\activate`
+3) `cd productivity_app`
+4) `python manage.py runserver`
