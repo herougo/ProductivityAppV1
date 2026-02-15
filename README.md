@@ -11,7 +11,7 @@ A productivity app implemented Django and vanilla JavaScript. The purpose of thi
 - Backend: python (Django)
 - Frontend: JavaScript (vanilla)
 
-## Installation (Windows with cmd)
+## Python Installation (Windows with cmd)
 
 1) Download and install python 3.14 ( https://www.python.org/downloads/ )
 2) `cd backend-productivity-app`.
@@ -19,6 +19,11 @@ A productivity app implemented Django and vanilla JavaScript. The purpose of thi
 4) Run `env\Scripts\activate` to activate the virtual environment
 5) Run `pip install -r requirements.txt`
 6) Run `env\Scripts\deactivate` to deactivate the virtual environment
+
+## npm Installation (Windows with cmd)
+
+1) Download and install Node.js ( https://nodejs.org/en/download )
+2) Load cmd and check it installed properly with `npm --version`
 
 ## Running a Development Server
 
