@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[contenthash].js',
+        filename: 'js/[name].[contenthash].js',
         clean: true,
     },
 
@@ -29,7 +29,7 @@ module.exports = {
 
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css'
+            filename: 'css/[name].[contenthash].css'
         }),
         new HtmlWebpackPlugin({
             filename: "home.html",
