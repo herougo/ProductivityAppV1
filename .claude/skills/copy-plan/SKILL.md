@@ -1,4 +1,7 @@
-# copy-plan
+---
+name: copy-plan
+description: Copies the current plan into the project under the ai/plans folder.
+---
 
 Copy this plan to the ai/plans folder. Using the following naming convention for the plan.
 
