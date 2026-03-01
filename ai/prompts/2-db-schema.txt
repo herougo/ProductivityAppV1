@@ -1,3 +1,1 @@
-Please read @ai/documentation/1-plan-overview.md for context.
-
 Please create a plan for creating the database schema.
