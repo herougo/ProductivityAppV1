@@ -6,50 +6,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a productivity tracking application built with Django (backend) and vanilla JavaScript (frontend). The project emphasizes learning Django, exploring vanilla JavaScript best practices, and creating a functional productivity tracker.
 
-## Development Setup
-
-### Python/Django Backend
-
-The Django project is located in `productivity_app/`. Working directory paths:
-- Project root: `ProductivityAppV1/`
-- Django root: `productivity_app/`
-- Django config: `productivity_app/productivity_app/`
-
-**Setup commands:**
-```bash
-# From project root
-cd productivity_app
-python -m venv ../env
-../env/Scripts/activate  # Windows
-pip install -r ../requirements.txt
-```
-
-**Run development server:**
-```bash
-# From productivity_app/ directory with venv activated
-python manage.py runserver
-```
-
-**Database:**
-- Uses SQLite (`db.sqlite3` in `productivity_app/`)
-- Migrations: `python manage.py makemigrations` and `python manage.py migrate`
-
-### Frontend (Vanilla JavaScript + Webpack)
-
-The frontend is in `productivity_app/frontend/` with Webpack for bundling.
-
-**Setup:**
-```bash
-# From productivity_app/frontend/
-npm install
-```
-
-**Build commands:**
-```bash
-npm run build-dev    # Development build
-npm run build-prod   # Production build
-```
-
 ## Architecture
 
 ### Frontend Structure
