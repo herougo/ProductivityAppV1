@@ -1,0 +1,1 @@
+This feature is for creating the database schema of the application.
