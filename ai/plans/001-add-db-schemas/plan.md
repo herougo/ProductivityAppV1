@@ -31,7 +31,6 @@ This plan implements the complete database schema for the productivity tracking 
 - [ ] 05 - **Register models in admin** - Configure Django admin interface for all models
 - [ ] 06 - **Add model enhancements** - Add __str__ methods, Meta classes, and helper methods
 - [ ] 07 - **Create default workflow states setup** - Add management command to create default workflow states
-- [ ] 08 - **Add signal handlers** - Implement auto-logging for task status changes
 
 ## Task Details
 
@@ -214,30 +213,3 @@ python manage.py migrate
 **Notes:**
 - This command can be run manually or integrated into user creation flow later
 - Consider adding this to a post_save signal for User model in the future
-
----
-
-### 08 - Add signal handlers
-
-**Type:** Code changes
-
-**Description:** Implement Django signals to automatically log task status changes.
-
-**Files to create/modify:**
-- Create: `productivity_app/productivity_core/signals.py`
-- Modify: `productivity_app/productivity_core/apps.py`
-
-**Signal functionality:**
-1. **Auto-create TaskWorkflowStates entry** when task status changes
-   - Use `pre_save` signal on Task model
-   - Compare old and new `current_status_id`
-   - If changed, create TaskWorkflowStates entry
-
-2. **Configure signal registration** in apps.py
-   - Override `ready()` method in ProductivityCoreConfig
-   - Import signals module
-
-**Notes:**
-- Be careful to avoid infinite loops in signals
-- Test that signals fire correctly when task status changes
-- Ensure signals don't interfere with initial task creation
