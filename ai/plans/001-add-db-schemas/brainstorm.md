@@ -16,6 +16,7 @@ Creating the database schema for a Django-based productivity tracking applicatio
 ### 1. User Model
 - **Question:** Should we use Django's built-in `User` model, extend it with `AbstractUser`, or use `AbstractBaseUser` for a completely custom implementation?
 - **Consideration:** The schema shows a simple "users" table. Django's built-in User provides username, email, password, and more out of the box.
+- **Answer**: Yes, use the built-in user model.
 
 ### 2. Data Integrity & Constraints
 - **Question:** Should we enforce additional constraints beyond those mentioned?
@@ -23,26 +24,33 @@ Creating the database schema for a Django-based productivity tracking applicatio
   - Unique constraint on `workflow_states.name` per user?
   - Unique constraint on `tasks.name` per user?
   - Check constraint to ensure sprint `start_date < end_date`?
+  - **Answer**: No, we can revisit this later.
 
 ### 3. Deletion Behavior
 - **Question:** What should happen when referenced records are deleted?
   - If an Epic is deleted, should tasks be set to NULL or cascade delete?
+    - **Answer**: When an epic is deleted, for corresponding tasks, set epic_id to NULL.
   - If a Workflow State is deleted, what happens to tasks using it?
+    - **Answer**: When a Workflow State is deleted, for corresponding tasks, set current_status_id to "Backlog" (or NULL if that does not exist). The Workflow State of "Backlog" cannot be deleted.
   - Should we use soft deletes (is_deleted flag) instead of hard deletes?
+    - **Answer**: No
 
 ### 4. Indexes
 - **Question:** Should we add database indexes for performance?
   - Index on `tasks.user_id, tasks.current_sprint_id` for board queries?
   - Index on `task_workflow_states.task_id, task_workflow_states.date_updated` for history queries?
+  - **Answer**: No, we can revisit this later.
 
 ### 5. Default Workflow States
 - **Question:** Should we create default workflow states (Backlog, In Progress, Done) for new users automatically?
+- **Answer**: Yes.
 
 ### 6. Sprint Management
 - **Question:** How are sprints created?
   - Automatically generated based on calendar weeks?
   - Manually created by users?
   - One sprint table for all users or per-user sprints?
+- **Answer**: Sprints are created by the users.
 
 ## Approach 1: Single-App Monolithic
 

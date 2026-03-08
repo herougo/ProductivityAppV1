@@ -35,6 +35,6 @@ Data Schema (SQL Tables)
 - task_completion_log: log of task completion events
     - task_id (primary key), minutes_logged, date_updated
 - sprint: week-long sprints
-    - columns: id, start_date, end_date
+    - columns: id, user_id, start_date, end_date
 - past_sprint_metadata: metadata about a sprint
     - columns: sprint_id, number_of_tasks_completed, minutes_of_work_completed, date_completed
