@@ -25,7 +25,7 @@ This plan implements the complete database schema for the productivity tracking 
 ## Task Overview
 
 - [x] 01 - **Create productivity_core app** - Create the Django app that will contain all models
-- [ ] 02 - **Configure Django app** - Add productivity_core to INSTALLED_APPS in settings.py
+- [x] 02 - **Configure Django app** - Add productivity_core to INSTALLED_APPS in settings.py
 - [ ] 03 - **Define all models** - Create all database models in models.py
 - [ ] 04 - **Create and run migrations** - Generate and apply database migrations
 - [ ] 05 - **Register models in admin** - Configure Django admin interface for all models
